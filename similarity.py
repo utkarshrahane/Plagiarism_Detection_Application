@@ -29,6 +29,12 @@ def webVerify(string, results_per_sentence):
     for sentence in sentences:
         for url in websearch.searchBing(query = sentence, num = results_per_sentence):
             matching_sites.append(url)
+    
+    for url in websearch.searchGoogle(query=string, num=results_per_sentence):
+        matching_sites.append(url)
+    for sentence in sentences:
+        for url in websearch.searchGoogle(query = sentence, num = results_per_sentence):
+            matching_sites.append(url)
 
     return (list(set(matching_sites)))
 
